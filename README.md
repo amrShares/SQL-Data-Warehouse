@@ -82,19 +82,10 @@ Data is ingested from **file-based extracts** provided by these systems.
 
 ```
 .
-├── bronze/
-│   ├── crm/
-│   └── erp/
-├── silver/
-│   ├── crm/
-│   └── erp/
-├── gold/
-│   ├── dimensions/
-│   └── facts/
 ├── scripts/
-│   ├── ingestion/
-│   ├── transformations/
-│   └── loading/
+├── datasets/
+│   ├── erp/
+│   └── crm/
 ├── docs/
 │   ├── architecture/
 │   └── diagrams/
@@ -136,8 +127,7 @@ Data is ingested from **file-based extracts** provided by these systems.
 Task tracking, implementation notes, and design decisions are maintained in Notion:
 
 🔗 **Notion Workspace (Tasks & Progress)**  
-> _Add link here_:  
-`https://www.notion.so/<your-project-notion-link>`
+> To be included
 
 ---
 
@@ -153,5 +143,4 @@ Task tracking, implementation notes, and design decisions are maintained in Noti
 
 ## License
 
-This project is intended for educational and internal analytical use.  
-Licensing can be defined based on deployment context.
+This project is published uner the MIT License. Its use, cloning, or extension is permitted.
