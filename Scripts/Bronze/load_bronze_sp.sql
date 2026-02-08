@@ -3,6 +3,7 @@ Warning: This script loads bronze layer info by TRUNCATING existing tables and I
 */
 CREATE OR ALTER PROCEDURE Bronze.load_bronze AS
 BEGIN
+DECLARE @batch_start_date DATETIME, @batch_end_date DATETIME
 	BEGIN TRY
 		PRINT '===================================================================='
 		PRINT 'Loading Bronze Layer'
@@ -11,7 +12,7 @@ BEGIN
 		PRINT '--------------------------------------------------------------------'
 		PRINT 'Loading CRM Tables'
 		PRINT '--------------------------------------------------------------------'
-
+		SET @batch_start_date = GETDATE()
 		PRINT '>> Loading Table: crm_cust_info'
 		TRUNCATE TABLE Bronze.crm_cust_info
 		BULK INSERT Bronze.crm_cust_info
@@ -138,6 +139,10 @@ BEGIN
 		ELSE
 			PRINT 'Column Order Compromised'
 		PRINT ''
+
+		SET @batch_end_date = GETDATE()
+
+		PRINT 'loading time: ' + CAST(DATEDIFF(SECOND, @batch_start_date, @batch_end_date) AS NVARCHAR) + ' seconds'
 	END TRY
 	BEGIN CATCH
 		PRINT '========================================================================='
@@ -149,4 +154,4 @@ BEGIN
 	END CATCH
 END
 
-EXEC Bronze.load_bronze
+--EXEC Bronze.load_bronze
