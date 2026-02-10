@@ -132,8 +132,8 @@ Data is ingested from **file-based extracts** provided by these systems.
 Task tracking, implementation notes, and design decisions are maintained in Notion:
 
 🔗 **Notion Workspace (Tasks & Progress)**  
-> To be included
-[Notion Workspace](https://www.notion.so/Data-Warehouse-Project-2f80f82a458d80b8821eeecc9ddc5383)
+
+[Workspace Link](https://www.notion.so/Data-Warehouse-Project-2f80f82a458d80b8821eeecc9ddc5383)
 ---
 
 ## Possible Future Enhancements
