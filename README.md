@@ -3,6 +3,8 @@
 This repository implements a **Data Warehouse and Analytics** solution built on **SQL Server**, following a **Medallion Data Architecture** (Bronze, Silver, Gold).  
 The project ingests raw data from **CRM** and **ERP** source systems, applies structured transformations, and loads curated datasets optimized for analytics and reporting.
 
+![high-level architecture](docs/diagrams/architecture.png)
+
 ---
 
 ## Overview
@@ -83,12 +85,15 @@ Data is ingested from **file-based extracts** provided by these systems.
 ```
 .
 ├── scripts/
+│   ├──/Silver
+│   ├──/Bronze
+│   └──/Gold
 ├── datasets/
 │   ├── erp/
 │   └── crm/
 ├── docs/
-│   ├── architecture/
 │   └── diagrams/
+├── tests/
 └── README.md
 ```
 
@@ -107,10 +112,10 @@ Data is ingested from **file-based extracts** provided by these systems.
 
 ## TODOs
 
-- [ ] Add **Data Pipeline Flow Diagram**  
+- [x] Add **Data Pipeline Flow Diagram**  
   *(End-to-end ingestion → transformation → analytics)*
 
-- [ ] Add **High-Level Project Architecture Diagram**  
+- [x] Add **High-Level Project Architecture Diagram**  
   *(Sources, layers, SQL Server components)*
 
 - [ ] Document **Data Models** for Gold Layer  
@@ -128,13 +133,12 @@ Task tracking, implementation notes, and design decisions are maintained in Noti
 
 🔗 **Notion Workspace (Tasks & Progress)**  
 > To be included
-
+[Notion Workspace](https://www.notion.so/Data-Warehouse-Project-2f80f82a458d80b8821eeecc9ddc5383)
 ---
 
-## Future Enhancements
+## Possible Future Enhancements
 
-- Incremental loading strategies
-- Automated data validation
+- Batch loading strategies
 - CI/CD for SQL deployments
 - Metadata and lineage tracking
 - Performance optimization and indexing strategies
